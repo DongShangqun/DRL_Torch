@@ -111,10 +111,15 @@ conda create --name myenvname
 conda activate myenvname
 
 pip3 install -r requirements.txt
+安装PyVirtualDisplay出错， error in PyVirtualDisplay setup command: use_2to3 is invalid. use_2to3 在setuptools工具包58版本后废弃
+    pip install setuptools=57.5.0
+    pip install PyVirtualDispaly==0.2.1
+
 报错 torch，解决：
-conda install pytorch=0.4.1 -c pytorch
+    conda install pytorch=0.4.1 -c pytorch
 
 python results/Cart_Pole.py
+error: another version of numpu is found, 到相应文件夹删除全部numpy文件夹，重新安装对应版本numpy，成功运行！！！
 ``` 
 
 For other games change the last line to one of the other files in the Results folder. 

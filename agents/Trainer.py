@@ -126,10 +126,17 @@ class Trainer(object):
 
     def environment_has_changeable_goals(self, env):
         """Determines whether environment is such that for each episode there is a different goal or not"""
+        if isinstance(env.reset(), dict):
+            print("enviroment has changeable goals")
+        else: print("enviroment does not have changeable goals")
         return isinstance(env.reset(), dict)
+        # isinstance 用来判断一个对象是否是一个已知的类型
 
     def agent_cant_handle_changeable_goals_without_flattening(self, agent_name):
         """Boolean indicating whether the agent is set up to handle changeable goals"""
+        if "HER" not in agent_name:
+            print("agent cant handle changeable goals without flattening")
+        else: print("agent can handle changeable goals without flattening")
         return "HER" not in agent_name
 
     def visualise_overall_agent_results(self, agent_results, agent_name, show_mean_and_std_range=False, show_each_run=False,

@@ -47,7 +47,7 @@ class Base_Agent(object):
 
     def step(self):
         """Takes a step in the game. This method must be overriden by any agent"""
-        raise ValueError("Step needs to be implemented by the agent")
+        raise ValueError("Step needs to be implemented by the agent 智能体未定义动作")
 
     def get_environment_title(self):
         """Extracts name of environment from it"""
@@ -370,3 +370,5 @@ class Base_Agent(object):
         """Copies model parameters from from_model to to_model"""
         for to_model, from_model in zip(to_model.parameters(), from_model.parameters()):
             to_model.data.copy_(from_model.data.clone())
+    # @staticmethod 用于修饰类中的方法，使其可以在不创建类实例的情况下调用方法，该方法一般被称为
+    # 静态方法，静态犯法不可以引用类中的属性或方法，其参数列表也不需要约定的默认参数self
